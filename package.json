@@ -1,0 +1,11 @@
+{
+  "name ": " Card Game Munchkin ",
+  "version": "0.1.0",
+  "description": "FL4 Epam  project",
+  "author": "Dream Team",
+  "scripts": {
+    "start": "gulp"
+  },
+  "devDependencies": {
+  }
+}
