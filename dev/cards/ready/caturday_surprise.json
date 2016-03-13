@@ -1,0 +1,5 @@
+{
+    "name": "caturday_surprise",
+    "cardClass": "one_shot",
+    "buffs": [{ "actin": "powerUp(3)" }]
+}

@@ -1,0 +1,5 @@
+{
+    "name": "apple_pie",
+    "cardClass": "one_shot",
+    "buffs": [{ "actin": "powerUp(2)" }]
+}
