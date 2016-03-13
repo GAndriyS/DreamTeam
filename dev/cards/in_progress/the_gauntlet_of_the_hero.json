@@ -1,0 +1,6 @@
+{
+    "name": "the_gauntlet_of_the_hero",
+    "cardClass": "one hand",
+    "worth": 600,
+    "buffs": [{ "action": "powerUp(5)" }]
+}

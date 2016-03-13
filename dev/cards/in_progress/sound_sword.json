@@ -1,0 +1,6 @@
+{
+    "name": "sound_sword",
+    "cardClass": "one hand",
+    "worth": 300,
+    "buffs": [{ "action": "powerUp(1)", "" }]
+}

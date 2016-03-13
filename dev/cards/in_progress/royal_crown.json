@@ -1,0 +1,6 @@
+{
+    "name": "royal_crown",
+    "cardClass": "head",
+    "worth": 500,
+    "buffs": [{ "action": "powerUp(4)" }]
+}
