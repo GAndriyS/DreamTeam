@@ -1,0 +1,6 @@
+{
+    "name": "ball_blam_burglerber",
+    "cardClass": "two hands",
+    "worth": 500,
+    "buffs": [{ "powerUp": "3" }]
+}

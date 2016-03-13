@@ -1,0 +1,6 @@
+{
+    "name": "pink_sweater",
+    "cardClass": "chest",
+    "worth": 400,
+    "buffs": [{ "powerUp": "2" }]
+}

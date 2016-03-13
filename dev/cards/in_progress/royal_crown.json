@@ -2,5 +2,5 @@
     "name": "royal_crown",
     "cardClass": "head",
     "worth": 500,
-    "buffs": [{ "action": "powerUp(4)" }]
+    "buffs": [{ "powerUp": "4" }]
 }

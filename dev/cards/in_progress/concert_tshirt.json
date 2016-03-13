@@ -1,0 +1,6 @@
+{
+    "name": "concert_tshirt",
+    "cardClass": "chest",
+    "worth": 0,
+    "buffs": [{ "powerUp": "1" }]
+}

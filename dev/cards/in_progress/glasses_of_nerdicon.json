@@ -1,0 +1,6 @@
+{
+    "name": "glasses_of_nerdicon",
+    "cardClass": "head",
+    "worth": 300,
+    "buffs": [{ "powerUp": "1"}]
+}

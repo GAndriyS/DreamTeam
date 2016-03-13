@@ -1,0 +1,6 @@
+{
+    "name": "flame_sword",
+    "cardClass": "one hand",
+    "worth": 300,
+    "buffs": [{ "powerUp": "2" }]
+}

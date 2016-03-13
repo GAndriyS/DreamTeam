@@ -1,0 +1,6 @@
+{
+    "name": "bear_hat",
+    "cardClass": "head",
+    "worth": 100,
+    "buffs": [{ "powerUp": "1"}]
+}

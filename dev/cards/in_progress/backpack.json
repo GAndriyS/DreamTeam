@@ -1,0 +1,6 @@
+{
+    "name": "backpack",
+    "cardClass": "buff",
+    "worth": 300,
+    "buffs": [{ "maxItemsUp": "100" }]
+}

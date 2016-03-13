@@ -1,0 +1,6 @@
+{
+    "name": "golden_sword_of_battle",
+    "cardClass": "one hand",
+    "worth": 100,
+    "buffs": [{ "powerUp": "1"}]
+}
