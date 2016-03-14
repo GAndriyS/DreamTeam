@@ -1,0 +1,10 @@
+{
+    "name": "xergiok",
+    "level": 6,
+    "cardClass": "monster",
+    "buffs": {"1":{"class":"wizards","powerDown":"3"}},
+    "debuff":{},
+    "gender":2,
+    "worth":2
+
+}

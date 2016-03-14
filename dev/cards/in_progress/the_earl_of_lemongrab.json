@@ -1,0 +1,11 @@
+{
+    "name": "the_earl_of_lemongrab",
+    "level":10,
+    "cardClass": "monster",
+    "buffs": [{"1":{"class":"royalty", "poweUp":"2"}},
+            {"2":{"class":"musicians", "poweUp":"2"}}],
+    "debuff":[],
+    "gender":2,
+    "worth":3
+
+}

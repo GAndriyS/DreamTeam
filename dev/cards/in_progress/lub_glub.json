@@ -1,0 +1,9 @@
+{
+    "name": "lub_glub",
+    "level":2,
+    "cardClass": "monster",
+    "buffs": {},
+    "debuff":{},
+    "gender":2,
+    "worth":1
+}

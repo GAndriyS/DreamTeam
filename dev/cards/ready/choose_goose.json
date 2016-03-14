@@ -1,0 +1,5 @@
+{
+    "name": "choose_goose",
+    "cardClass": "ally",
+    "buffs":{"1":{"powerUp":"1"}}
+}

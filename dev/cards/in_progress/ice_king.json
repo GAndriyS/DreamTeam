@@ -1,0 +1,9 @@
+{
+    "name": "ice_king",
+    "level":18,
+    "cardClass": "monster",
+    "buffs": {"1":{"gender":"male","powerUp":"+3"}},
+    "debuff":{"1":{"gender":"male","levelDown":"-1"}},
+    "gender":2,
+    "worth":4
+

@@ -1,0 +1,10 @@
+{
+    "name": "hunson_abadeer",
+    "level":18,
+    "cardClass": "monster undead deamon",
+    "buffs": {},
+    "debuff":{"1":{"levelDown":"1"}},
+    "gender":2,
+    "worth":4
+
+}

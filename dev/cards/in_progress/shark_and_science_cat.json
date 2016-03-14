@@ -1,0 +1,10 @@
+{
+    "name": "shark_and_science_cat",
+    "level": 4,
+    "cardClass": "monster",
+    "buffs": {"1":{"powerUp":"4"}},
+    "debuff":{},
+    "gender":2,
+    "worth":2
+
+}

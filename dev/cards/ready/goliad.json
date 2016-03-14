@@ -1,0 +1,19 @@
+{
+    "name": "goliad",
+    "level":14,
+    "cardClass": "monster",
+    "buffs": [{"1" : { "level" : "1","powerDown":"-5" }}, 
+    	{"2":{ "level" : "2" , "powerDown" : "-5" }},
+    	{"3":{ "level" : "3" , "powerDown" : "-5" }},
+    	{"4":{ "level" : "4" , "powerDown" : "-5" }},
+    	{"5":{ "level" : "5" , "powerDown" : "-5" }},
+    	{"6":{ "level" : "6" , "powerUp" : "+5"}},
+    	{"7":{ "level" : "7" , "powerUp" : "+5" }},
+    	{"8":{ "level" : "8" , "powerUp" : "+5"}},
+    	{"9":{ "level" : "9" , "powerUp" : "+5" }}],
+
+    "debuff":[{"levelDown":"-2"}],
+    "gender":2,
+    "worth":4
+}
+

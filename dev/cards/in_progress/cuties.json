@@ -1,0 +1,8 @@
+{
+    "name": "cuties",
+    "level":1,
+    "cardClass": "monster",
+    "buffs": {},
+    "debuff":{},
+    "gender":2,
+    "worth":1

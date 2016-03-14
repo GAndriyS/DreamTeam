@@ -1,0 +1,10 @@
+{
+    "name": "demon_cat",
+    "level": 2,
+    "cardClass": "demon",
+    "buffs": {},
+    "debuff":{},
+    "gender":2,
+    "worth":1
+
+}

@@ -1,0 +1,5 @@
+{
+    "name": "tree_trunks",
+    "cardClass": "ally",
+    "buffs":{"1":{"powerUp":"1"}}
+}

@@ -1,0 +1,5 @@
+{
+    "name": "space_prince",
+    "cardClass": "characters",
+    "buffs": {"1":{"powerUp":"2"}}
+}

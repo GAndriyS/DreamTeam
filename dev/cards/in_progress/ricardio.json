@@ -1,0 +1,10 @@
+{
+    "name": "ricardio",
+    "level":12,
+    "cardClass": "monster",
+    "buffs": {"1":{"class":"royalty", "poweUp":"+2"},
+            "2":{"gender":"females", "poweUp":"+3"},
+            "3":{"class":"royalty","gender":"females","poweUp":"+5"}},
+    "debuff":[],
+    "gender":1,
+    "worth":3

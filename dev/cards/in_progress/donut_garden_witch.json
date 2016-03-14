@@ -1,0 +1,10 @@
+{
+    "name": "donut_garden_witch",
+    "level":8,
+    "cardClass": "monster",
+    "buffs": {},
+    "debuff":{"1":{"levelDown":"2"}},
+    "gender":2,
+    "worth":3
+
+}

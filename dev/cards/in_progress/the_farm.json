@@ -1,0 +1,10 @@
+{
+    "name": "the_farm",
+    "level": 12,
+    "cardClass": "monster",
+    "buffs": {"1":{"gender":"males", "powerUp":"2"},
+              "2":{"class":"heroes","powerUp":"3"} },
+    "debuff":{},
+    "gender":2,
+    "worth":3
+}

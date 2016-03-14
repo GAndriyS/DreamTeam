@@ -1,0 +1,9 @@
+{
+    "name": "scorcher",
+    "level":10,
+    "cardClass": "demon",
+    "buffs": {},
+    "debuff":{},
+    "gender":2,
+    "worth":3
+

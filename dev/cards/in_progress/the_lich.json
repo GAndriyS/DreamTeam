@@ -1,0 +1,8 @@
+{
+    "name": "the_lich",
+    "level":20,
+    "cardClass": "undead",
+    "buffs": {},
+    "debuff":{},
+    "gender":2,
+    "worth":5

@@ -1,0 +1,9 @@
+{
+    "name": "donny_th_grass_ogre",
+    "level": 1,
+    "cardClass": "monster",
+    "buffs": {},
+    "debuff":{},
+    "gender":2,
+    "worth":1
+}

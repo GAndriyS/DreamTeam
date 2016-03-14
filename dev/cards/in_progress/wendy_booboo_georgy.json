@@ -1,0 +1,8 @@
+{
+    "name": "wendy_booboo_georgy",
+    "level":6,
+    "cardClass": "undead",
+    "buffs": {"1":{"class":"heroes", "poweUp":"+3"}},
+    "debuff":{},
+    "gender":2,
+    "worth":2

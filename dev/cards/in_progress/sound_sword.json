@@ -2,5 +2,5 @@
     "name": "sound_sword",
     "cardClass": "one hand",
     "worth": 300,
-    "buffs": [{ "powerUp": "1", "runawayUp": "2" }]
+    "buffs": [{ "action": "powerUp(1)", "" }]
 }

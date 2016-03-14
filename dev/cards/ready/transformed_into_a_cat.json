@@ -1,0 +1,5 @@
+{
+    "name": "transformed_into_a_cat",
+    "cardClass": "curse",
+    "debuff":{"1":{"levelDown":"2"}}
+}

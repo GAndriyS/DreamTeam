@@ -1,0 +1,15 @@
+{
+    "name": "fionna",
+    "cardClass": "characters",
+    "buffs": {"1":{"level":"10","powerUp":"2"},
+    		"2":{"level":"11","powerUp":"2"},
+    		"3":{"level":"12","powerUp":"2"},
+    		"4":{"level":"13","powerUp":"2"},
+    		"5":{"level":"14","powerUp":"2"},
+    		"6":{"level":"15","powerUp":"2"},
+    		"7":{"level":"16","powerUp":"2"},
+    		"8":{"level":"17","powerUp":"2"},
+    		"9":{"level":"18","powerUp":"2"},
+    		"10":{"level":"19","powerUp":"2"},
+    		"11":{"level":"20","powerUp":"2"}}
+}

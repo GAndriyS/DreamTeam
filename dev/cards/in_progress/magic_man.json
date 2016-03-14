@@ -1,0 +1,9 @@
+{
+    "name": "magic_man",
+    "level": 16,
+    "cardClass": "monster",
+    "buffs": {},
+    "debuff":{},
+    "gender":2,
+    "worth":4
+}

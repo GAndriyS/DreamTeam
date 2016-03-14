@@ -1,0 +1,5 @@
+{
+    "name": "the_lump",
+    "cardClass": "curse",
+    "debuff":{"1":{"levelDown":"1"}}
+}

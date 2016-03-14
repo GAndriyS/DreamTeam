@@ -1,0 +1,9 @@
+{
+    "name": "kitten",
+    "level": 12,
+    "cardClass": "monster",
+    "buffs": {},
+    "debuff":{},
+    "gender":2,
+    "worth":3
+}

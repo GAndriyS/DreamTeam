@@ -1,0 +1,9 @@
+{
+    "name": "bucket_knight",
+    "level":4,
+    "cardClass": "monster",
+    "buffs": {},
+    "debuff":{},
+    "gender":2,
+    "worth":2
+}

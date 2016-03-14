@@ -1,0 +1,10 @@
+{
+    "name": "tree_witch",
+    "level": 4,
+    "cardClass": "monster",
+    "buffs": {},
+    "debuff":{"1":{"levelDown":"1"}},
+    "gender":2,
+    "worth":2
+
+}

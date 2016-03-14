@@ -1,0 +1,10 @@
+{
+    "name": "get_grinder",
+    "level":10,
+    "cardClass": "monster",
+    "buffs": {},
+    "debuff":{},
+    "gender":1,
+    "worth":3
+}
+

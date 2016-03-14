@@ -1,5 +1,5 @@
 {
     "name": "instant_bath_serum",
     "cardClass": "one_shot",
-    "buffs": [{ "powerUp": "2" }]
+    "buffs": [{ "action": "powerUp(2)" }]
 }

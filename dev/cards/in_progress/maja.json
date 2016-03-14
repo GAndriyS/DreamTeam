@@ -1,0 +1,10 @@
+{
+    "name": "maja",
+    "level": 14,
+    "cardClass": "monster",
+    "buffs": {},
+    "debuff":{},
+    "gender":2,
+    "worth":4
+
+}

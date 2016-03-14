@@ -1,0 +1,8 @@
+{
+    "name": "door_load",
+    "level":8,
+    "cardClass": "monster",
+    "buffs": {},
+    "debuff":{},
+    "gender":2,
+    "worth":2

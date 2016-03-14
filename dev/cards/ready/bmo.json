@@ -1,0 +1,14 @@
+{
+    "name": "bmo",
+    "cardClass": "characters",
+    "buffs": {"1":{"level":"10","powerUp":"2"},
+    		"2":{"level":"9","powerUp":"2"},
+    		"3":{"level":"8","powerUp":"2"},
+    		"4":{"level":"7","powerUp":"2"},
+    		"5":{"level":"6","powerUp":"2"},
+    		"6":{"level":"5","powerUp":"2"},
+    		"7":{"level":"4","powerUp":"2"},
+    		"8":{"level":"3","powerUp":"2"},
+    		"9":{"level":"2","powerUp":"2"},
+    		"10":{"level":"1","powerUp":"2"}}
+}

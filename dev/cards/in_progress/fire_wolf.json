@@ -1,0 +1,10 @@
+{
+    "name": "fire_wolf",
+    "level":6,
+    "cardClass": "monster",
+    "buffs": {},
+    "debuff":{"1":{}},
+    "gender":2,
+    "worth":2
+
+}

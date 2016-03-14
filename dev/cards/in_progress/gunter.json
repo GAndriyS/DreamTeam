@@ -1,0 +1,10 @@
+{
+    "name": "gunter",
+    "level":2,
+    "cardClass": "monster",
+    "buffs": {"1":{"powerUp":"+20"}},
+    "debuff":{},
+    "gender":2,
+    "worth":1
+}
+

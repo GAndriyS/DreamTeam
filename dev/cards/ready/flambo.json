@@ -1,0 +1,6 @@
+{
+    "name": "the_morrow",
+    "cardClass": "ally",
+    "buffs":{"1":{"powerUp":"1"},
+			"2":{}}
+}

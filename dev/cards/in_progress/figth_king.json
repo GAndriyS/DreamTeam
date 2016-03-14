@@ -1,0 +1,10 @@
+{
+    "name": "figth_king",
+    "level": 12,
+    "cardClass": "undead",
+    "buffs": {},
+    "debuff":{},
+    "gender":2,
+    "worth":3
+
+}

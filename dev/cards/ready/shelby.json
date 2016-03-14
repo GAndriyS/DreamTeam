@@ -1,0 +1,6 @@
+{
+    "name": "shelby",
+    "cardClass": "ally",
+    "buffs":{"1":{"powerUp":"1"},
+			"2":{"class":"musicians","powerUp":"3"}}
+}

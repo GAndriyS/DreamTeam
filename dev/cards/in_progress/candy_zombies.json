@@ -1,0 +1,10 @@
+{
+    "name": "candy_zombies",
+    "level": 1,
+    "cardClass": "undead",
+    "buffs": {},
+    "debuff":{},
+    "gender":2,
+    "worth":1
+
+}

@@ -1,0 +1,5 @@
+{
+    "name": "razzamafoo",
+    "cardClass": "curse",
+    "debuff":{"1":{"discardHand":"all"}}
+}

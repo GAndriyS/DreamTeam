@@ -1,0 +1,6 @@
+{
+    "name": "banana_guard",
+    "cardClass": "ally",
+    "buffs":{"1":{"powerUp":"1"},
+			"2":{"class":"royalty","powerUp":"3"}}
+}

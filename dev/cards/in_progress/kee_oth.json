@@ -1,0 +1,10 @@
+{
+    "name": "kee_oth",
+    "level":10,
+    "cardClass": "demon",
+    "buffs": [],
+    "debuff":[{"levelDown":"2"}],
+    "gender":2,
+    "worth":3
+
+}

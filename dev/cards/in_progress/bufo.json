@@ -1,0 +1,11 @@
+{
+    "name": "bufo",
+    "level":14,
+    "cardClass": "monster",
+    "buffs": {"1":{"class":"wizards","powerDown":"-6"},
+    "2":{"powerUp":"+3"}},
+    "debuff":{},
+    "gender":2,
+    "worth":4
+}
+

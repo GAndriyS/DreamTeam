@@ -2,5 +2,5 @@
     "name": "hambo",
     "cardClass": "buff",
     "worth": 0,
-    "buffs": [{ "powerUp": "4" }]
+    "buffs": [{ "action": "powerUp(4)" }]
 }
