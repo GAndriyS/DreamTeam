@@ -1,5 +1,10 @@
 /** Class representing a game Player. */
 function Player(config) {
+    /**
+    * Create a player.
+    * @param {string} config.name - Player's name.
+    * @param {string} config.gender - Player's gender.
+    */
     var _name = config.name;
     var _gender = config.gender;
     var _lvl = 1;
@@ -17,9 +22,10 @@ function Player(config) {
         ally: [],
         cheats: []
     };
+
     /**
      * Get the player name.
-         * @return {string} Player name string.
+         * @return {string} - Player name string.
      */
     this.getName = function() {
         return _name;
@@ -27,7 +33,7 @@ function Player(config) {
 
     /**
      * Get the player gender.
-     * @return {string} Player gender string.
+     * @return {string} - Player gender string.
      */
     this.getGender = function() {
         return _gender;
@@ -35,15 +41,15 @@ function Player(config) {
 
     /**
      * Get the player level value.
-     * @return {number} Player level value.
+     * @return {number} - Player level value.
      */
-    this.getLvl = function() {
+    this.getLevel = function() {
         return _lvl;
     }
 
     /**
      * Get the player power value.
-     * @return {number} Player power value.
+     * @return {number} - Player power value.
      */
     this.getPower = function() {
         return _power;
@@ -51,7 +57,7 @@ function Player(config) {
 
     /**
      * Get the player buffs.
-     * @return {array} Player buffs array.
+     * @return {array} - Player buffs array.
      */
     this.getBuffs = function() {
         return _buffs;
@@ -59,7 +65,7 @@ function Player(config) {
 
     /**
      * Get the player debuffs.
-     * @return {array} Player debuffs array.
+     * @return {array} - Player debuffs array.
      */
     this.getDebuffs = function() {
         return _debuffs;
@@ -67,7 +73,7 @@ function Player(config) {
 
     /**
      * Get the player hero.
-     * @return {string} Player hero name.
+     * @return {string} - Player hero name.
      */
     this.getHero = function() {
         return _hero;
@@ -75,24 +81,29 @@ function Player(config) {
 
     /**
      * Get the player items.
-     * @return {object} Object of player items.
+     * @return {object} - Object of player items.
      */
     this.getItems = function() {
         return _items;
     }
 
     /**
-     * Change player's gender to opposite.
+     * Set gender for player.
+     * @param {string} gender - New player's gender.
      */
-    this.swapGender = function() {
-        _gender = _gender == "male" ? "female" : "male";
+    this.setGender = function(gender) {
+        if (typeof gender == "string") {
+            _gender = gender;
+        } else {
+            throw "Error: gender must be a string.";
+        }
     }
 
     /**
      * Set level for player.
      * @param {number} n - New level value.
      */
-    this.setLvl = function(n) {
+    this.setLevel = function(n) {
         if (typeof n == "number") {
             _lvl = n;
         } else {
@@ -117,7 +128,7 @@ function Player(config) {
      * @param {array} arr - New buffs array.
      */
     this.setBuffs = function(arr) {
-        if (typeof arr == "array") {
+        if (Array.isArray(arr)) {
             _buffs = arr;
         } else {
             throw "Error: buffs must be an array.";
@@ -129,7 +140,7 @@ function Player(config) {
      * @param {array} arr - New debuffs array.
      */
     this.setDebuffs = function(arr) {
-        if (typeof arr == "array") {
+        if (Array.isArray(arr)) {
             _debuffs = arr;
         } else {
             throw "Error: debuffs must be an array.";
