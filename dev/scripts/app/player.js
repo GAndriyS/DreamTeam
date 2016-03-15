@@ -12,11 +12,12 @@ function Player(config) {
     var _buffs = [];
     var _debuffs = [];
     var _hero = "";
+    var _hand = [];
     var _items = {
         head: [],
         chest: [],
-        leftHand: [],
-        rightHand: [],
+        oneHand: [],
+        twoHands: [],
         boots: [],
         class: [],
         ally: [],
@@ -25,7 +26,7 @@ function Player(config) {
 
     /**
      * Get the player name.
-         * @return {string} - Player name string.
+     * @return {string} - Player name string.
      */
     this.getName = function() {
         return _name;
@@ -77,6 +78,14 @@ function Player(config) {
      */
     this.getHero = function() {
         return _hero;
+    }
+
+    /**
+     * Get the player hand cards.
+     * @return {object} - Object of player hand cards.
+     */
+    this.getHand = function() {
+        return _hand;
     }
 
     /**
@@ -156,6 +165,18 @@ function Player(config) {
             _hero = hero;
         } else {
             throw "Error: hero must be a string.";
+        }
+    }
+
+    /**
+     * Set hand cards for player.
+     * @param {array} cards - New hero hand cards.
+     */
+    this.setHand = function(cards) {
+        if (Array.isArray(cards)) {
+            _hand = cards;
+        } else {
+            throw "Error: hand cards must be an array.";
         }
     }
 

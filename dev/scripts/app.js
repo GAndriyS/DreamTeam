@@ -24,3 +24,21 @@ var card2 = {
         effect: "decrease lvl"
     }
 }
+
+var card3 = {
+    name : "item1",
+    class: "oneHand",
+    status: "disable"
+}
+
+var card4 = {
+    name : "item2",
+    class: "oneHand",
+    status: "disable"
+}
+
+var card5 = {
+    name : "item3",
+    class: "head",
+    status: "active"
+}

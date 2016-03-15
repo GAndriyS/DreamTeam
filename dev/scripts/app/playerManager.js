@@ -270,13 +270,141 @@ function PlayerManager() {
      */
     this.equipItem = function(item, playerName) {
         if (typeof item == "object" && typeof playerName == "string") {
+            var currentItems;
 
-            _players.forEach(function(player, index) {
+            _players.forEach(function(player) {
+                if (player.getName() == playerName) {
+                    currentItems = player.getItems();
 
+                    for(type in currentItems) {
+                        if (type == item.class) {
+                            item.status = "active";
+                            currentItems[type].push(item);
+                            break;
+                        }
+                    }
+
+                    return;
+                }
             });
 
         } else {
-            throw "Error: can't swap heroes with wrong data";
+            throw "Error: can't equip item with wrong data";
         }
     }
+
+    /**
+     * Swap equiped items.
+     * @param {object} newItem - object of new card-item.
+     * @param {string} playerName - target player's name.
+     * @return {array} - Array of unequipped cards.
+     */
+    this.swapItems = function(newItem, playerName) {
+        if (typeof newItem == "object" && typeof playerName == "string") {
+            var currentItems;
+            var oldItems;
+
+            _players.forEach(function(player) {
+                if (player.getName() == playerName) {
+                    currentItems = player.getItems();
+
+                    for(type in currentItems) {
+                        if (type == newItem.class) {
+                            currentItems[type].forEach(function(item) {
+                                if (item.status == "active") {
+                                    oldItems = currentItems[type].splice(currentItems[type].indexOf(item), 1);
+                                    oldItems.forEach(function(item) {
+                                        item.status = "disable";
+                                    })
+                                    newItem.status = "active";
+                                    currentItems[type].push(newItem);
+                                    return;
+                                }
+                            });
+                            break;
+                        }
+                    }
+                }
+            });
+
+            return oldItems;
+
+        } else {
+            throw "Error: can't swap items with wrong data";
+        }
+    }
+
+    /**
+     * Swap equiped items.
+     * @param {object} item - object of card-item.
+     * @param {string} playerName - target player's name.
+     * @return {boolean} - is slot available.
+     */
+    this.checkSlot = function(item, playerName) {
+        if (typeof item == "object" && typeof playerName == "string") {
+            var currentItems;
+            var isAvailable = true;
+
+            _players.forEach(function(player) {
+                if (player.getName() == playerName) {
+                    currentItems = player.getItems();
+
+                    for(type in currentItems) {
+                        if (type == item.class) {
+                            if (type == "oneHand") {
+                                isAvailable = checkSlotStatus(currentItems, currentItems[type][0].class, "twoHands");
+                            } else if (type == "twoHands") {
+                                isAvailable = checkSlotStatus(currentItems, currentItems[type][0].class, "oneHand");
+                            } else {
+                                isAvailable = checkSlotStatus(currentItems, currentItems[type][0].class);
+                            }
+
+                            break;
+                        }
+                    }
+                }
+            });
+
+            return isAvailable;
+
+        } else {
+            throw "Error: can't check slot with wrong data";
+        }
+    }
+}
+/**
+ * Function define item slot status
+ */
+function checkSlotStatus(items, type, relatedType) {
+
+    var count = 0;
+    var status = true
+
+    if (items[type].length == 0) { return status };
+
+    if ((type == "oneHand" && relatedType == "twoHands") || (type == "twoHands" && relatedType == "oneHand")) {
+        items["twoHands"].forEach(function(item) {
+            if (item.status == "active") {
+                status = false;
+            }
+        })
+        items["oneHand"].forEach(function(item) {
+            if (item.status == "active") {
+                count++ ;
+                if (count == 2 && relatedType == "twoHands") {
+                    status = false;
+                } else if (count == 1 && relatedType == "oneHand") {
+                    status = false;
+                }
+            }
+        })
+    } else {
+        items[type].forEach(function(item) {
+            if (item.status == "active") {
+                status = false;
+            }
+        })
+    }
+
+    return status;
 }
