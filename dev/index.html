@@ -5,11 +5,73 @@
         <title>Dev Index</title>
     </head>
     <body>
+
+        <style media="screen">
+            #mob {
+                width: 40%;
+                height: 320px;
+                background-color: #ffa;
+                float: left;
+            }
+            #player {
+                width: 60%;
+                height: 320px;
+                background-color: #fcc;
+                float: left;
+            }
+            #items {
+                width: 40%;
+                height: 320px;
+                background-color: #0ff;
+                float: left;
+            }
+            #hand {
+                width: 60%;
+                height: 320px;
+                background-color: #ff1;
+                float: left;
+            }
+            .card {
+                box-sizing: border-box;
+                width: 100px;
+                height: 155px;;
+                float: left;
+                margin-right: 5px;
+            }
+            .card button:nth-child(1) {
+                margin-top: 50%;
+            }
+            .card button {
+                margin-left: 20%;
+            }
+
+        </style>
+
+        <div>
+            <div id="mob">
+            </div>
+            <div id="player">
+            </div>
+            <div id="items">
+            </div>
+            <div id="hand">
+            </div>
+        </div>
+
+        <script type="template/javascript" id="card">
+            <div class="card" style="background-size: cover; background-image: url(cards/{{name}}.png);">
+                <button type="button" name="{{name}}" class="mob">Monstr</button>
+                <button type="button" name="player" class="player">Player</button>
+            </div>
+        </script>
+
+        <script src="scripts/app/additionalFunctions.js"></script>
+        <script src="scripts/lib/handlebars.js"></script>
         <script src="scripts/app/card.js"></script>
         <script src="scripts/app/player.js"></script>
-        <script src="scripts/app/manager.js"></script>
         <script src="scripts/app/cardManager.js"></script>
         <script src="scripts/app/playerManager.js"></script>
+        <script src="scripts/app/renderManager.js"></script>
         <script src="scripts/app/gameManager.js"></script>
         <script src="scripts/app/connectionManager.js"></script>
         <script src="scripts/app.js"></script>

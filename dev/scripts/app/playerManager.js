@@ -20,21 +20,38 @@ function PlayerManager() {
     }
 
     /**
+     * Set order and hero for each players.
+     * @param {array} heroes - array of card-heroes.
+     */
+    this.begin = function(heroes) {
+        if (Array.isArray(heroes)) {
+            var tempHeroes = heroes.slice(0);
+            var randomNumber;
+            var order = getRandomArray(0, _players.length);
+            _players.forEach(function(player, index) {
+                randomNumber = getRandomInt(0, tempHeroes.length-1);
+                player.setHero(tempHeroes[randomNumber]);
+                player.setOrder(order[index]);
+                tempHeroes.splice(randomNumber, 1);
+            });
+
+           RenderManager.renderSectin(_players[0].getHand(), "hand");
+        } else {
+            throw "Error: can't reverse gender with wrong data";
+        }
+    }
+
+    /**
      * Reverse player's gender.
      * @param {string} playerName - target player's name.
      */
     this.reverseGender = function(playerName) {
         if (typeof playerName == "string") {
-            var currentGender;
+            var player = findPlayer(_players, playerName);
+            var currentGender = player.getGender();
 
-            _players.forEach(function(player){
-                if (player.getName() == playerName) {
-                    currentGender = player.getGender();
-                    currentGender = currentGender == "male" ? "female" : "male";
-                    player.setGender(currentGender);
-                    return;
-                }
-            });
+            currentGender = currentGender == "male" ? "female" : "male";
+            player.setGender(currentGender);
 
         } else {
             throw "Error: can't reverse gender with wrong data";
@@ -48,15 +65,10 @@ function PlayerManager() {
      */
     this.raiseLevel = function(n, playerName) {
         if (typeof n == "number" && typeof playerName == "string") {
-            var currentLevel;
+            var player = findPlayer(_players, playerName);
+            var currentLevel = player.getLevel();
 
-            _players.forEach(function(player){
-                if (player.getName() == playerName) {
-                    currentLevel = player.getLevel();
-                    player.setLevel(currentLevel + n);
-                    return;
-                }
-            });
+            player.setLevel(currentLevel + n);
 
         } else {
             throw "Error: can't raise level with wrong data";
@@ -70,19 +82,15 @@ function PlayerManager() {
      */
     this.decreaseLevel = function(n, playerName) {
         if (typeof n == "number" && typeof playerName == "string") {
-            var currentLevel;
+            var player = findPlayer(_players, playerName);
+            var currentLevel = player.getLevel();
 
-            _players.forEach(function(player) {
-                if (player.getName() == playerName) {
-                    currentLevel = player.getLevel();
-                    if (currentLevel - n >= 1) {
-                        player.setLevel(currentLevel - n);
-                        return;
-                    } else {
-                        console.log("Can't decrease level to " + (currentLevel - n));
-                    }
-                }
-            });
+            if (currentLevel - n >= 1) {
+                player.setLevel(currentLevel - n);
+                return;
+            } else {
+                console.log("Can't decrease level to " + (currentLevel - n));
+            }
 
         } else {
             throw "Error: can't decrease level with wrong data";
@@ -96,13 +104,9 @@ function PlayerManager() {
      */
     this.setPlayerPower = function(n, playerName) {
         if (typeof n == "number" && typeof playerName == "string") {
+            var player = findPlayer(_players, playerName);
 
-            _players.forEach(function(player) {
-                if (player.getName() == playerName) {
-                    player.setPower(n);
-                    return;
-                }
-            });
+            player.setPower(n);
 
         } else {
             throw "Error: can't set player power with wrong data";
@@ -117,15 +121,11 @@ function PlayerManager() {
     this.addBuff = function(newBuff, playerName) {
         if (typeof newBuff == "object" && typeof playerName == "string") {
             var currentBuffs = [];
+            var player = findPlayer(_players, playerName);
 
-            _players.forEach(function(player) {
-                if (player.getName() == playerName) {
-                    currentBuffs = player.getBuffs();
-                    currentBuffs.push(newBuff);
-                    player.setBuffs(currentBuffs);
-                    return;
-                }
-            });
+            currentBuffs = player.getBuffs();
+            currentBuffs.push(newBuff);
+            player.setBuffs(currentBuffs);
 
         } else {
             throw "Error: can't add buff with wrong data";
@@ -141,21 +141,17 @@ function PlayerManager() {
         if (typeof buffName == "string" && typeof playerName == "string") {
             var currentBuffs = [];
             var removeBuff = {};
+            var player = findPlayer(_players, playerName);
 
-            _players.forEach(function(player) {
-                if (player.getName() == playerName) {
-                    currentBuffs = player.getBuffs();
-                    currentBuffs.forEach(function(buff) {
-                        if (buff.name == buffName) {
-                            removeBuff = buff;
-                            return;
-                        }
-                    });
-                    currentBuffs.splice(currentBuffs.indexOf(removeBuff), 1);
-                    player.setBuffs(currentBuffs);
+            currentBuffs = player.getBuffs();
+            currentBuffs.forEach(function(buff) {
+                if (buff.name == buffName) {
+                    removeBuff = buff;
                     return;
                 }
             });
+            currentBuffs.splice(currentBuffs.indexOf(removeBuff), 1);
+            player.setBuffs(currentBuffs);
 
         } else {
             throw "Error: can't remove buff with wrong data";
@@ -170,15 +166,11 @@ function PlayerManager() {
     this.addDebuff = function(newDebuff, playerName) {
         if (typeof newDebuff == "object" && typeof playerName == "string") {
             var currentDebuffs = [];
+            var player = findPlayer(_players, playerName);
 
-            _players.forEach(function(player) {
-                if (player.getName() == playerName) {
-                    currentDebuffs = player.getDebuffs();
-                    currentDebuffs.push(newDebuff);
-                    player.setDebuffs(currentDebuffs);
-                    return;
-                }
-            });
+            currentDebuffs = player.getDebuffs();
+            currentDebuffs.push(newDebuff);
+            player.setDebuffs(currentDebuffs);
 
         } else {
             throw "Error: can't add debuff with wrong data";
@@ -194,21 +186,17 @@ function PlayerManager() {
         if (typeof debuffName == "string" && typeof playerName == "string") {
             var currentDebuffs = [];
             var removeDebuff = {};
+            var player = findPlayer(_players, playerName);
 
-            _players.forEach(function(player) {
-                if (player.getName() == playerName) {
-                    currentDebuffs = player.getDebuffs();
-                    currentDebuffs.forEach(function(debuff) {
-                        if (debuff.name == debuffName) {
-                            removeDebuff = debuff;
-                            return;
-                        }
-                    });
-                    currentDebuffs.splice(currentDebuffs.indexOf(removeDebuff), 1);
-                    player.setDebuffs(currentDebuffs);
+            currentDebuffs = player.getDebuffs();
+            currentDebuffs.forEach(function(debuff) {
+                if (debuff.name == debuffName) {
+                    removeDebuff = debuff;
                     return;
                 }
             });
+            currentDebuffs.splice(currentDebuffs.indexOf(removeDebuff), 1);
+            player.setDebuffs(currentDebuffs);
 
         } else {
             throw "Error: can't remove debuff with wrong data";
@@ -222,13 +210,9 @@ function PlayerManager() {
      */
     this.setHero = function(hero, playerName) {
         if (typeof hero == "string" && typeof playerName == "string") {
+            var player = findPlayer(_players, playerName);
 
-            _players.forEach(function(player) {
-                if (player.getName() == playerName) {
-                    player.setHero(hero);
-                    return;
-                }
-            });
+            player.setHero(hero);
 
         } else {
             throw "Error: can't set hero with wrong data";
@@ -264,29 +248,78 @@ function PlayerManager() {
     }
 
     /**
+     * Gives cards to player.
+     * @param {array} cards - array of cards.
+     * @param {string} playerName - Target player's name.
+     */
+    this.giveCards = function(cards, playerName) {
+        if (Array.isArray(cards) && typeof playerName == "string") {
+            var player = findPlayer(_players, playerName);
+            var hand = player.getHand();
+
+            hand = hand.concat(cards);
+            player.setHand(hand);
+
+        } else {
+            throw "Error: can't give cards with wrong data";
+        }
+    }
+
+    /**
+     * Get player card by Name.
+     * @param {string} name - array of cards.
+     * @param {number} playerIndex - Target player's index.
+     * @return {object} required card.
+     */
+    this.getCardByName = function(name, playerIndex) {
+        if (typeof name == "string" && typeof playerIndex == "number") {
+            var requiredCard;
+            var currentCards = _players[playerIndex].getHand();
+
+            requiredCard = returnCard(currentCards, name);
+            if (requiredCard) { return requiredCard; }
+
+            currentCards = _players[playerIndex].getItems();
+            for (var i = 0; i < currentCards.length; i++) {
+                requiredCard = returnCard(currentCards[i], name);
+                if (requiredCard) { break; }
+            }
+
+            if (requiredCard) { return requiredCard; }
+        } else {
+            throw "Error: can't give cards with wrong data";
+        }
+    }
+
+    /**
+     * Get all player hand cards.
+     * @param {number} playerIndex - Target player's index.
+     */
+    this.getPlayerCards = function(playerIndex) {
+        if (typeof playerIndex == "number") {
+            return _players[playerIndex].getHand();
+        } else {
+            throw "Error: can't get all player hand cards with wrong data";
+        }
+    }
+
+    /**
      * Equip item on player.
      * @param {object} item - object of card-item.
      * @param {string} playerName - target player's name.
      */
     this.equipItem = function(item, playerName) {
         if (typeof item == "object" && typeof playerName == "string") {
-            var currentItems;
+            var player = findPlayer(_players, playerName);
+            var currentItems = player.getItems();
 
-            _players.forEach(function(player) {
-                if (player.getName() == playerName) {
-                    currentItems = player.getItems();
-
-                    for(type in currentItems) {
-                        if (type == item.class) {
-                            item.status = "active";
-                            currentItems[type].push(item);
-                            break;
-                        }
-                    }
-
-                    return;
+            for(type in currentItems) {
+                if (type == item.class) {
+                    item.status = "active";
+                    currentItems[type].push(item);
+                    break;
                 }
-            });
+            }
 
         } else {
             throw "Error: can't equip item with wrong data";
@@ -301,31 +334,25 @@ function PlayerManager() {
      */
     this.swapItems = function(newItem, playerName) {
         if (typeof newItem == "object" && typeof playerName == "string") {
-            var currentItems;
+            var player = findPlayer(_players, playerName);
+            var currentItems = player.getItems();
             var oldItems;
 
-            _players.forEach(function(player) {
-                if (player.getName() == playerName) {
-                    currentItems = player.getItems();
-
-                    for(type in currentItems) {
-                        if (type == newItem.class) {
-                            currentItems[type].forEach(function(item) {
-                                if (item.status == "active") {
-                                    oldItems = currentItems[type].splice(currentItems[type].indexOf(item), 1);
-                                    oldItems.forEach(function(item) {
-                                        item.status = "disable";
-                                    })
-                                    newItem.status = "active";
-                                    currentItems[type].push(newItem);
-                                    return;
-                                }
-                            });
-                            break;
+            for(type in currentItems) {
+                if (type == newItem.class) {
+                    currentItems[type].forEach(function(item) {
+                        if (item.status == "active") {
+                            oldItems = currentItems[type].splice(currentItems[type].indexOf(item), 1);
+                            oldItems.forEach(function(item) {
+                                item.status = "disable";
+                            })
+                            newItem.status = "active";
+                            currentItems[type].push(newItem);
                         }
-                    }
+                    });
+                    break;
                 }
-            });
+            }
 
             return oldItems;
 
@@ -338,32 +365,27 @@ function PlayerManager() {
      * Swap equiped items.
      * @param {object} item - object of card-item.
      * @param {string} playerName - target player's name.
-     * @return {boolean} - is slot available.
+     * @return {boolean} isAvailable - is slot available.
      */
     this.checkSlot = function(item, playerName) {
         if (typeof item == "object" && typeof playerName == "string") {
-            var currentItems;
+            var player = findPlayer(_players, playerName);
+            var currentItems = player.getItems();
             var isAvailable = true;
 
-            _players.forEach(function(player) {
-                if (player.getName() == playerName) {
-                    currentItems = player.getItems();
-
-                    for(type in currentItems) {
-                        if (type == item.class) {
-                            if (type == "oneHand") {
-                                isAvailable = checkSlotStatus(currentItems, currentItems[type][0].class, "twoHands");
-                            } else if (type == "twoHands") {
-                                isAvailable = checkSlotStatus(currentItems, currentItems[type][0].class, "oneHand");
-                            } else {
-                                isAvailable = checkSlotStatus(currentItems, currentItems[type][0].class);
-                            }
-
-                            break;
-                        }
+            for(type in currentItems) {
+                if (type == item.class) {
+                    if (type == "oneHand") {
+                        isAvailable = checkSlotStatus(currentItems, currentItems[type][0].class, "twoHands");
+                    } else if (type == "twoHands") {
+                        isAvailable = checkSlotStatus(currentItems, currentItems[type][0].class, "oneHand");
+                    } else {
+                        isAvailable = checkSlotStatus(currentItems, currentItems[type][0].class);
                     }
+
+                    break;
                 }
-            });
+            }
 
             return isAvailable;
 
@@ -372,39 +394,10 @@ function PlayerManager() {
         }
     }
 }
-/**
- * Function define item slot status
- */
-function checkSlotStatus(items, type, relatedType) {
 
-    var count = 0;
-    var status = true
+var PlayerManager = new PlayerManager();
+PlayerManager.addPlayer({name: "Andriy", gender: "male"});
+PlayerManager.addPlayer({name: "Ira", gender: "female"});
+PlayerManager.addPlayer({name: "Helena", gender: "female"});
 
-    if (items[type].length == 0) { return status };
-
-    if ((type == "oneHand" && relatedType == "twoHands") || (type == "twoHands" && relatedType == "oneHand")) {
-        items["twoHands"].forEach(function(item) {
-            if (item.status == "active") {
-                status = false;
-            }
-        })
-        items["oneHand"].forEach(function(item) {
-            if (item.status == "active") {
-                count++ ;
-                if (count == 2 && relatedType == "twoHands") {
-                    status = false;
-                } else if (count == 1 && relatedType == "oneHand") {
-                    status = false;
-                }
-            }
-        })
-    } else {
-        items[type].forEach(function(item) {
-            if (item.status == "active") {
-                status = false;
-            }
-        })
-    }
-
-    return status;
-}
+var p = PlayerManager.getPlayers();

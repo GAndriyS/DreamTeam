@@ -6,6 +6,7 @@ function Player(config) {
     * @param {string} config.gender - Player's gender.
     */
     var _name = config.name;
+    var _order;
     var _gender = config.gender;
     var _lvl = 1;
     var _power = 1;
@@ -30,6 +31,14 @@ function Player(config) {
      */
     this.getName = function() {
         return _name;
+    }
+
+    /**
+     * Get the player's order.
+     * @return {number} - Player name string.
+     */
+    this.getOrder = function() {
+        return _order;
     }
 
     /**
@@ -97,6 +106,18 @@ function Player(config) {
     }
 
     /**
+     * Set player's order.
+     * @param {number} order - New player's order.
+     */
+    this.setOrder = function(order) {
+        if (typeof order == "number") {
+            _order = order;
+        } else {
+            throw "Error: order be a number.";
+        }
+    }
+
+    /**
      * Set gender for player.
      * @param {string} gender - New player's gender.
      */
@@ -158,13 +179,13 @@ function Player(config) {
 
     /**
      * Set hero for player.
-     * @param {string} hero - New hero name.
+     * @param {object} hero - New hero name.
      */
-    this.setHero = function(hero) {
-        if (typeof hero == "string") {
+    this.setHero = function(hero) {        
+        if (typeof hero == "object") {
             _hero = hero;
         } else {
-            throw "Error: hero must be a string.";
+            throw "Error: hero must be an object.";
         }
     }
 
