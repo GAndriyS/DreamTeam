@@ -11,44 +11,6 @@ var doors =
 var heroes = [{name:"BMO"}, {name:"marceline"}, {name:"fine"}]
 
 /**
- * Function define item slot status
- * @return {boolean} is slot available.
- */
-function checkSlotStatus(items, type, relatedType) {
-
-    var count = 0;
-    var status = true
-
-    if (items[type].length == 0) { return status };
-
-    if ((type == "oneHand" && relatedType == "twoHands") || (type == "twoHands" && relatedType == "oneHand")) {
-        items["twoHands"].forEach(function(item) {
-            if (item.status == "active") {
-                status = false;
-            }
-        })
-        items["oneHand"].forEach(function(item) {
-            if (item.status == "active") {
-                count++ ;
-                if (count == 2 && relatedType == "twoHands") {
-                    status = false;
-                } else if (count == 1 && relatedType == "oneHand") {
-                    status = false;
-                }
-            }
-        })
-    } else {
-        items[type].forEach(function(item) {
-            if (item.status == "active") {
-                status = false;
-            }
-        })
-    }
-
-    return status;
-}
-
-/**
  * Find Player By Name
  * @return {object} player.
  */
@@ -104,17 +66,4 @@ function getTemplate(name) {
         }
         xhr.send();
     });
-}
-
-/**
- * Returns card and remove from array
- */
-function returnCard(arr, name) {
-    var n;
-    arr.forEach(function(item, index) {
-        if (item.name == name) {
-            n = index;
-        }
-    });
-    return arr.splice(n, 1);
 }
